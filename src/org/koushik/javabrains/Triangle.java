@@ -2,8 +2,24 @@ package org.koushik.javabrains;
 
 public class Triangle {
 	
+	private String type;
+	
+	
+	
+	public String getType() {
+		return type;
+	}
+
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+
 	public void draw () {
-		System.out.println("Draw Triangle again");
+		System.out.println(getType() + "  Draw Triangle");
 	}
 	
 }
