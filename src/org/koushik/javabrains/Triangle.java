@@ -51,6 +51,14 @@ public class Triangle implements InitializingBean, DisposableBean  {
 		System.out.println("PointC = (" + getPointC().getX() + " , " + getPointC().getY() + ")" );
 
 	}
+	
+	public void myInit() {
+		System.out.println("My init method called for triangle");
+	}
+	
+	public void cleanUp() {
+		System.out.println("My cleanup method called for triangle");
+	}
 
 
 	@Override
