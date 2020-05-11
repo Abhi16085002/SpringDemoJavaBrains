@@ -2,8 +2,17 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"   "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-	<bean id="triangle" class="org.koushik.javabrains.Triangle" autowire="byName" >
+	<bean id="parenttriangle" class="org.koushik.javabrains.Triangle" >
+			<property name="pointA" ref="pointA"></property>
+	</bean>
 	
+	<bean id="triangle1" class="org.koushik.javabrains.Triangle" parent="parenttriangle" >
+			<property name="pointB" ref="pointB"></property>
+			<property name="pointC" ref="pointC"></property>
+	</bean>
+	
+	<bean id="triangle2" class="org.koushik.javabrains.Triangle" parent="parenttriangle" >
+			<property name="pointB" ref="pointB"></property>
 	</bean>
 	
 	<bean id="pointA" class="org.koushik.javabrains.Point" >
