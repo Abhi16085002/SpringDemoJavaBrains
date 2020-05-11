@@ -1,12 +1,17 @@
 package org.koushik.javabrains;
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Triangle implements ApplicationContextAware, BeanNameAware  {
 	
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 	
-	
+	private ApplicationContext context = null;
 	
 	
 	public Point getPointA() {
@@ -43,6 +48,21 @@ public class Triangle {
 		System.out.println("PointB = (" + getPointB().getX() + " , " + getPointB().getY() + ")" );
 		System.out.println("PointC = (" + getPointC().getX() + " , " + getPointC().getY() + ")" );
 
+	}
+
+
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		this.context = context;
+		
+	}
+
+
+	@Override
+	public void setBeanName(String beanName) {
+		// TODO Auto-generated method stub
+		System.out.println("bean Name is " + beanName);
+		
 	}
 	
 }
