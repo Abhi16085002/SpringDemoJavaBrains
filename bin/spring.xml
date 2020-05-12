@@ -23,4 +23,7 @@
 	      <property name="y" value="0" />
 	</bean>
 	
+	<bean class="org.koushik.javabrains.DisplayNameBeanPostProcessor" />
+
+	
 </beans>
