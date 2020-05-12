@@ -7,7 +7,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements InitializingBean, DisposableBean  {
+public class Triangle implements InitializingBean, DisposableBean,Shape  {
 	
 	private Point pointA;
 	private Point pointB;
@@ -44,8 +44,9 @@ public class Triangle implements InitializingBean, DisposableBean  {
 
 
 
-
+    @Override
 	public void draw () {
+		System.out.println("Drawing Triangle");
 		System.out.println("PointA = (" + getPointA().getX() + " , " + getPointA().getY() + ")" );
 		System.out.println("PointB = (" + getPointB().getX() + " , " + getPointB().getY() + ")" );
 		System.out.println("PointC = (" + getPointC().getX() + " , " + getPointC().getY() + ")" );

@@ -3,8 +3,12 @@
 
 <beans default-init-method="myInit" default-destroy-method="cleanUp" >
 	
-	<bean id="triangle" class="org.koushik.javabrains.Triangle" autowire="byName" init-method="myInit" destroy-method="cleanUp" >
+	<bean id="triangle" class="org.koushik.javabrains.Triangle" autowire="byName" >
 			
+	</bean>
+	
+	<bean id="circle" class="org.koushik.javabrains.Circle" >
+	      <property name="center" ref="pointA" />
 	</bean>
 	
 	
